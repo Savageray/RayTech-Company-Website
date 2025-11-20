@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact RayTech Foundation</title>
+
+<!-- EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- Contact Page CSS -->
+<link rel="stylesheet" href="./assets/css/contact.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/logo.png">
+
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <div class="navbar-left">
+        <div class="navbar-logo">
+            <img src="./assets/images/logo.png" alt="RayTech Logo">
+            <span>RayTech Foundation</span>
+        </div>
+        <div class="navbar-toggle" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <nav class="navbar-links" id="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<!-- CONTACT CONTAINER -->
+<div class="contact-container">
+    <img class="company-logo" src="./assets/images/logo.png" alt="RayTech Logo">
+    <h1>Contact RayTech Foundation</h1>
+    <p>Reach us via Gmail, WhatsApp, or submit the form below:</p>
+
+    <!-- Quick Contact Options -->
+    <div class="contact-options">
+        <a href="mailto:raytechfoundation@gmail.com" class="contact-btn">📧 Email Us</a>
+        <a href="https://wa.me/254712733412" class="contact-btn">💬 WhatsApp</a>
+    </div>
+
+    <!-- Contact Form -->
+    <form id="contactForm">
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
+        <input type="email" id="email" name="email" placeholder="Your Email" required>
+        <input type="text" id="phone" name="phone" placeholder="Phone Number">
+        
+        <select id="service" name="service" required>
+            <option value="" disabled selected>Select Service</option>
+            <option value="Web Design & Development">Web Design & Development</option>
+            <option value="Graphic Design & Branding">Graphic Design & Branding</option>
+            <option value="CCTV Installation & Security">CCTV Installation & Security</option>
+            <option value="Tech Support & Maintenance">Tech Support & Maintenance</option>
+            <option value="Other Services">Other Services</option>
+        </select>
+
+        <textarea id="message" name="message" placeholder="Your Message / Project Details" required></textarea>
+        <button type="submit">Submit</button>
+    </form>
+
+    <div id="formMessage"></div>
+</div>
+
+<!-- SCRIPTS -->
+<script>
+  // Initialize EmailJS
+  emailjs.init("vz9P5DdVKx7i27CNz"); // Replace with your EmailJS Public Key
+
+  const contactForm = document.getElementById("contactForm");
+  const formMessage = document.getElementById("formMessage");
+
+  contactForm.addEventListener("submit", function(e){
+    e.preventDefault();
+
+    const params = {
+      name: document.getElementById("name").value,
+      email: document.getElementById("email").value,
+      phone: document.getElementById("phone").value,
+      service: document.getElementById("service").value,
+      message: document.getElementById("message").value
+    };
+
+    // Auto-reply to customer
+    emailjs.send("service_xcktzh8", "template_qjh0qno", params)
+      .then(() => console.log("Auto-reply sent."))
+      .catch((err) => console.error("Auto-reply error:", err));
+
+    // Notification to RayTech
+    emailjs.send("service_xcktzh8", "template_jp59jg6", params)
+      .then(() => {
+        formMessage.textContent = "✅ Message sent successfully!";
+        contactForm.reset();
+      })
+      .catch((err) => {
+        formMessage.textContent = "❌ Error sending message. Please try again.";
+        console.error(err);
+      });
+  });
+
+  // Hamburger toggle
+  const toggle = document.querySelector('.navbar-toggle');
+  const links = document.querySelector('.navbar-links');
+  toggle.addEventListener('click', () => {
+    links.classList.toggle('active');
+    toggle.classList.toggle('active');
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RayTech Foundation - Home</title>
+  <link rel="stylesheet" href="./assets/css/main.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/logo.png">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="navbar-left">
+    <div class="navbar-logo">
+      <img src="./assets/images/logo.png" alt="RayTech Logo">
+      <span>RayTech Foundation</span>
+    </div>
+    <div class="navbar-toggle" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <nav class="navbar-links" id="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero">
+  <div id="particles-js"></div>
+  <div class="hero-content">
+    <h1 class="big-title">RAYTECH FOUNDATION</h1><br><br>
+    <h1>Empowering Businesses Through Tech & Design</h1>
+    <p>Web Development, Graphic Design, CCTV Installation & Tech Support—innovative solutions for the future.</p>
+    <div class="hero-buttons">
+      <a href="services.html" class="cta-btn">View Services</a>
+      <a href="contact.html" class="cta-btn">Get a Quote</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT PREVIEW -->
+<section class="about-preview">
+  <h2>About RayTech</h2>
+  <p>RayTech Foundation is a tech solutions hub, offering futuristic services to grow your business. From web development and design to CCTV and tech support, we have you covered.</p>
+  <a href="about.html" class="cta-btn">Learn More</a>
+</section>
+
+<!-- SERVICES PREVIEW -->
+<section class="services-preview">
+  <h2>Our Services</h2>
+  <div class="services-cards">
+    <div class="service-card">
+      <h3>Web Development</h3>
+      <p>Responsive websites, e-commerce solutions, custom applications, and maintenance.</p>
+      <a href="services.html#web-development" class="cta-btn">View Details</a>
+    </div>
+    <div class="service-card">
+      <h3>Graphic Design</h3>
+      <p>Logos, branding, social media graphics, and marketing materials.</p>
+      <a href="services.html#graphic-design" class="cta-btn">View Details</a>
+    </div>
+    <div class="service-card">
+      <h3>CCTV & Security</h3>
+      <p>Installation, configuration, remote access, and system maintenance.</p>
+      <a href="services.html#cctv" class="cta-btn">View Details</a>
+    </div>
+    <div class="service-card">
+      <h3>Document Design</h3>
+      <p>Professional business documents designed to 
+        impress and communicate your brand effectively.</p>
+      <a href="services.html#tech-support" class="cta-btn">View Details</a>
+    </div>
+    <div class="service-card">
+      <h3>Tech Support</h3>
+      <p>Software installation, troubleshooting, and IT support for your business.</p>
+      <a href="services.html#tech-support" class="cta-btn">View Details</a>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO PREVIEW -->
+<section class="portfolio-preview">
+  <h2>Our Work</h2>
+  <div class="portfolio-cards">
+    <div class="portfolio-card"><p>Website Project</p></div>
+    <div class="portfolio-card"><p>Logo & Branding</p></div>
+    <div class="portfolio-card"><p>CCTV Installation</p></div>
+    <div class="portfolio-card"><p>Document Design</p></div>
+    <div class="portfolio-card"><p>Tech Support Case</p></div>
+  </div>
+  <a href="portfolio.html" class="cta-btn">View Full Portfolio</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 RayTech Foundation | Nairobi, Kenya</p>
+  <p>Email: raytechfoundation@gmail.com | Phone: +254 712 733 412 / +254 792 798 796
+  | Website: raytechfoundation.com
+  </p>
+</footer>
+
+<!-- PARTICLES & HAMBURGER -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navLinks.classList.toggle('active');
+  });
+
+  particlesJS('particles-js', {
+    "particles": {
+      "number": {"value": 80},
+      "color": {"value": "#00C8FF"},
+      "shape": {"type": "circle"},
+      "opacity": {"value": 0.3},
+      "size": {"value": 3},
+      "line_linked": {"enable": true, "distance": 150, "color": "#00C8FF", "opacity": 0.2, "width": 1},
+      "move": {"enable": true, "speed": 2, "direction": "none", "out_mode": "out"}
+    },
+    "interactivity": {
+      "detect_on": "canvas",
+      "events": {"onhover": {"enable": true, "mode": "grab"}, "onclick": {"enable": true, "mode": "push"}},
+      "modes": {"grab": {"distance": 140, "line_linked": {"opacity": 0.5}}, "push": {"particles_nb": 4}}
+    },
+    "retina_detect": true
+  });
+</script>
+
+</body>
+</html>
